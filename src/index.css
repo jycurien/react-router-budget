@@ -49,9 +49,6 @@ svg {
   --round-md: 10px;
   --round-lg: 25px;
   --round-full: 100vmax;
-
-  /* toast customizations */
-  --toastify-color-success: hsl(var(--accent));
 }
 
 body {
@@ -592,9 +589,4 @@ table a {
   background-color: hsl(var(--accent));
   padding: var(--space-xs) var(--space-sm);
   border-radius: var(--round-full);
-}
-
-/* toast */
-.Toastify__toast-body {
-  font-size: var(--fs-300);
 }

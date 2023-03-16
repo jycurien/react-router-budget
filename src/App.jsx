@@ -9,6 +9,7 @@ import logoutAction from './actions/logout'
 // Routes
 import Dashboard, { dashboardLoader } from './pages/Dashboard'
 import Error from './pages/Error'
+import { SnackbarProvider } from 'notistack'
 
 const router = createBrowserRouter([
   {
@@ -33,7 +34,12 @@ const router = createBrowserRouter([
 function App() {
   return (
     <div className='App'>
-      <RouterProvider router={router} />
+      <SnackbarProvider
+        autoHideDuration={3000}
+        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      >
+        <RouterProvider router={router} />
+      </SnackbarProvider>
     </div>
   )
 }
