@@ -7,7 +7,7 @@ import Main, { mainLoader } from './layouts/Main'
 import logoutAction from './actions/logout'
 
 // Routes
-import Dashboard, { dashboardLoader } from './pages/Dashboard'
+import Dashboard, { dashboardAction, dashboardLoader } from './pages/Dashboard'
 import Error from './pages/Error'
 import { SnackbarProvider } from 'notistack'
 
@@ -21,6 +21,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Dashboard />,
+        action: dashboardAction,
         loader: dashboardLoader,
       },
       {
