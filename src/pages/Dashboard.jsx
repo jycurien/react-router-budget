@@ -55,7 +55,11 @@ const Dashboard = () => {
           </h1>
           <div className='grid-sm'>
             {budgets ? (
-              <div></div>
+              <div className='grid-lg'>
+                <div className='flex-lg'>
+                  <AddBudgetForm />
+                </div>
+              </div>
             ) : (
               <div className='grid-lg'>
                 <div className='flex-lg'>
