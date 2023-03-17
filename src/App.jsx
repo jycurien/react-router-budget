@@ -8,7 +8,10 @@ import Main, { mainLoader } from './layouts/Main'
 import logoutAction from './actions/logout'
 
 // Routes
-import ExpensesPage, { expensesLoader } from './pages/ExpensesPage'
+import ExpensesPage, {
+  expensesAction,
+  expensesLoader,
+} from './pages/ExpensesPage'
 import Dashboard, { dashboardAction, dashboardLoader } from './pages/Dashboard'
 import Error from './pages/Error'
 
@@ -28,6 +31,7 @@ const router = createBrowserRouter([
       {
         path: 'expenses',
         element: <ExpensesPage />,
+        action: expensesAction,
         loader: expensesLoader,
       },
       {
