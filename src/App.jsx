@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { SnackbarProvider } from 'notistack'
 
 // Layouts
 import Main, { mainLoader } from './layouts/Main'
@@ -7,9 +8,9 @@ import Main, { mainLoader } from './layouts/Main'
 import logoutAction from './actions/logout'
 
 // Routes
+import ExpensesPage, { expensesLoader } from './pages/ExpensesPage'
 import Dashboard, { dashboardAction, dashboardLoader } from './pages/Dashboard'
 import Error from './pages/Error'
-import { SnackbarProvider } from 'notistack'
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
         element: <Dashboard />,
         action: dashboardAction,
         loader: dashboardLoader,
+      },
+      {
+        path: 'expenses',
+        element: <ExpensesPage />,
+        loader: expensesLoader,
       },
       {
         path: 'logout',

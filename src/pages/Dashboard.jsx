@@ -1,4 +1,4 @@
-import { useLoaderData } from 'react-router-dom'
+import { Link, useLoaderData } from 'react-router-dom'
 import { enqueueSnackbar } from 'notistack'
 import { createBudget, createExpense, fetchData } from '../helpers'
 
@@ -87,10 +87,15 @@ const Dashboard = () => {
                   <div className='grid-md'>
                     <h2>Recent Expenses</h2>
                     <Table
-                      expenses={expenses.sort(
-                        (a, b) => b.createdAt - a.createdAt
-                      )}
+                      expenses={expenses
+                        .sort((a, b) => b.createdAt - a.createdAt)
+                        .slice(0, 8)}
                     />
+                    {expenses.length > 8 && (
+                      <Link to='expenses' className='btn btn--dark'>
+                        View all expenses
+                      </Link>
+                    )}
                   </div>
                 )}
               </div>
