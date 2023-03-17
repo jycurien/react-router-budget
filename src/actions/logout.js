@@ -9,6 +9,12 @@ const logoutAction = async () => {
   deleteItem({
     key: 'userName',
   })
+  deleteItem({
+    key: 'budgets',
+  })
+  deleteItem({
+    key: 'expenses',
+  })
   enqueueSnackbar('You have deleted you account!', {
     variant: 'success',
   })
