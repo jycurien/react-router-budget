@@ -8,11 +8,12 @@ import Main, { mainLoader } from './layouts/Main'
 import logoutAction from './actions/logout'
 
 // Routes
+import Dashboard, { dashboardAction, dashboardLoader } from './pages/Dashboard'
+import BudgetPage, { budgetAction, budgetLoader } from './pages/BudgetPage'
 import ExpensesPage, {
   expensesAction,
   expensesLoader,
 } from './pages/ExpensesPage'
-import Dashboard, { dashboardAction, dashboardLoader } from './pages/Dashboard'
 import Error from './pages/Error'
 
 const router = createBrowserRouter([
@@ -27,12 +28,21 @@ const router = createBrowserRouter([
         element: <Dashboard />,
         action: dashboardAction,
         loader: dashboardLoader,
+        errorElement: <Error />,
+      },
+      {
+        path: 'budget/:id',
+        element: <BudgetPage />,
+        action: budgetAction,
+        loader: budgetLoader,
+        errorElement: <Error />,
       },
       {
         path: 'expenses',
         element: <ExpensesPage />,
         action: expensesAction,
         loader: expensesLoader,
+        errorElement: <Error />,
       },
       {
         path: 'logout',
