@@ -15,7 +15,7 @@ const logoutAction = async () => {
   deleteItem({
     key: 'expenses',
   })
-  enqueueSnackbar('You have deleted you account!', {
+  enqueueSnackbar('You have deleted your account!', {
     variant: 'success',
   })
   // return redirect
